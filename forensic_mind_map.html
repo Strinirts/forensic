@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forensic Investigation System - Mind Map</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #e9edf2;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #viewport {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: none;
+    background: #e9edf2;
+  }
+  #viewport.dragging { cursor: grabbing; }
+  svg {
+    display: block;
+    width: 1640px;
+    height: 900px;
+    background: #e9edf2;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .links path {
+    fill: none;
+    stroke: #8994a3;
+    stroke-width: 1.15;
+    opacity: .9;
+  }
+  .node ellipse {
+    fill: #fff;
+    stroke: #aaa;
+    stroke-width: 1.15;
+  }
+  .node text {
+    fill: #111;
+    font-size: 12px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+  }
+  .bracket {
+    fill: none;
+    stroke: #8994a3;
+    stroke-width: 1.2;
+  }
+  .hint {
+    position: fixed;
+    right: 14px;
+    bottom: 12px;
+    color: #4b5563;
+    background: rgba(255,255,255,.92);
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 12px;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div id="viewport" aria-label="Scrollable forensic investigation mind map">
+<svg id="map" viewBox="0 0 1640 900" xmlns="http://www.w3.org/2000/svg">
+  <g class="links">
+    <!-- Login and home -->
+    <path d="M118 480 C140 480 150 480 170 480"/>
+    <path d="M264 480 C310 480 335 323 370 323"/>
+    <path d="M264 480 C310 480 335 720 375 720"/>
+
+    <!-- Crime reports branch -->
+    <path d="M484 323 C510 323 520 323 545 323"/>
+    <path d="M630 323 C675 270 720 145 767 145"/>
+    <path d="M630 323 C680 280 730 180 780 180"/>
+    <path d="M630 323 C680 295 730 215 788 215"/>
+    <path d="M630 323 C685 305 730 250 780 250"/>
+    <path d="M630 323 C690 315 735 285 800 285"/>
+    <path d="M630 323 C690 323 740 323 800 323"/>
+    <path d="M630 323 C690 335 735 360 790 360"/>
+    <path d="M630 323 C685 345 730 400 770 400"/>
+    <path d="M630 323 C680 365 730 440 768 440"/>
+    <path d="M630 323 C675 390 715 485 765 485"/>
+
+    <!-- New case branch -->
+    <path d="M262 480 C315 480 335 720 375 720"/>
+    <path d="M456 720 C490 720 510 720 535 720"/>
+    <path d="M620 720 C675 665 720 543 757 543"/>
+    <path d="M620 720 C680 680 730 578 770 578"/>
+    <path d="M620 720 C680 690 730 613 780 613"/>
+    <path d="M620 720 C685 700 730 648 770 648"/>
+    <path d="M620 720 C690 710 740 683 785 683"/>
+    <path d="M620 720 C690 720 740 720 790 720"/>
+    <path d="M620 720 C690 730 740 755 780 755"/>
+    <path d="M620 720 C685 745 730 800 765 800"/>
+    <path d="M620 720 C680 770 730 840 765 840"/>
+    <path d="M620 720 C675 790 715 880 760 880"/>
+
+    <!-- Category to database links: top -->
+    <path d="M927 145 C970 145 990 148 1030 148"/>
+    <path d="M899 180 C955 180 990 183 1030 183"/>
+    <path d="M869 215 C940 215 980 218 1025 218"/>
+    <path d="M928 250 C970 250 995 253 1030 253"/>
+    <path d="M900 285 C960 285 990 288 1030 288"/>
+    <path d="M901 323 C960 323 990 323 1030 323"/>
+    <path d="M868 360 C940 360 985 363 1030 363"/>
+    <path d="M901 400 C960 400 990 403 1030 403"/>
+    <path d="M908 440 C965 440 990 443 1030 443"/>
+    <path d="M916 485 C970 485 995 488 1030 488"/>
+
+    <!-- Category to database links: bottom -->
+    <path d="M918 543 C965 543 995 546 1030 546"/>
+    <path d="M890 578 C955 578 990 581 1030 581"/>
+    <path d="M859 613 C940 613 985 616 1030 616"/>
+    <path d="M918 648 C965 648 995 651 1030 651"/>
+    <path d="M891 683 C955 683 990 686 1030 686"/>
+    <path d="M902 720 C960 720 990 723 1030 723"/>
+    <path d="M866 755 C940 755 985 758 1030 758"/>
+    <path d="M899 800 C960 800 990 803 1030 803"/>
+    <path d="M908 840 C965 840 995 843 1030 843"/>
+    <path d="M904 880 C960 880 995 883 1030 883"/>
+
+    <!-- Database groups to AI/report actions -->
+    <path d="M1145 133 L1145 500 M1145 315 L1273 315"/>
+    <path d="M1135 530 L1135 897 M1135 712 L1270 712"/>
+    <path d="M1448 315 C1460 315 1468 315 1475 315"/>
+    <path d="M1443 712 C1455 712 1465 712 1475 712"/>
+  </g>
+
+  <g class="bracket">
+    <path d="M1145 133 h-8 M1145 133 v367 M1145 500 h-8"/>
+    <path d="M1135 530 h-8 M1135 530 v367 M1135 897 h-8"/>
+  </g>
+
+  <g class="node">
+    <!-- Main nodes -->
+    <g><ellipse cx="72" cy="480" rx="45" ry="12"/><text x="72" y="480">Login Page</text></g>
+    <g><ellipse cx="217" cy="480" rx="47" ry="12"/><text x="217" y="480">Home Page</text></g>
+
+    <g><ellipse cx="427" cy="323" rx="57" ry="12"/><text x="427" y="323">Crime Reports</text></g>
+    <g><ellipse cx="587" cy="323" rx="43" ry="12"/><text x="587" y="323">Categories</text></g>
+    <g><ellipse cx="415" cy="720" rx="39" ry="12"/><text x="415" y="720">New case</text></g>
+    <g><ellipse cx="577" cy="720" rx="43" ry="12"/><text x="577" y="720">Categories</text></g>
+
+    <!-- Top categories -->
+    <g><ellipse cx="846" cy="145" rx="80" ry="12"/><text x="846" y="145">Murder Investigation</text></g>
+    <g><ellipse cx="840" cy="180" rx="59" ry="12"/><text x="840" y="180">Sexual Assault</text></g>
+    <g><ellipse cx="828" cy="215" rx="40" ry="12"/><text x="828" y="215">Poisioning</text></g>
+    <g><ellipse cx="846" cy="250" rx="82" ry="12"/><text x="846" y="250">Theft and Robbery</text></g>
+    <g><ellipse cx="847" cy="285" rx="49" ry="12"/><text x="847" y="285">Cyber Crime</text></g>
+    <g><ellipse cx="846" cy="323" rx="46" ry="12"/><text x="846" y="323">Drug Offense</text></g>
+    <g><ellipse cx="845" cy="360" rx="23" ry="12"/><text x="845" y="360">Arson</text></g>
+    <g><ellipse cx="836" cy="400" rx="65" ry="12"/><text x="836" y="400">Road Accidents</text></g>
+    <g><ellipse cx="837" cy="440" rx="69" ry="12"/><text x="837" y="440">Missing Persons</text></g>
+    <g><ellipse cx="842" cy="485" rx="74" ry="12"/><text x="842" y="485">Document Forgery</text></g>
+
+    <!-- Bottom categories -->
+    <g><ellipse cx="837" cy="543" rx="80" ry="12"/><text x="837" y="543">Murder Investigation</text></g>
+    <g><ellipse cx="829" cy="578" rx="59" ry="12"/><text x="829" y="578">Sexual Assault</text></g>
+    <g><ellipse cx="818" cy="613" rx="40" ry="12"/><text x="818" y="613">Poisioning</text></g>
+    <g><ellipse cx="843" cy="648" rx="74" ry="12"/><text x="843" y="648">Theft and Robbery</text></g>
+    <g><ellipse cx="836" cy="683" rx="49" ry="12"/><text x="836" y="683">Cyber Crime</text></g>
+    <g><ellipse cx="842" cy="720" rx="46" ry="12"/><text x="842" y="720">Drug Offense</text></g>
+    <g><ellipse cx="835" cy="755" rx="23" ry="12"/><text x="835" y="755">Arson</text></g>
+    <g><ellipse cx="835" cy="800" rx="65" ry="12"/><text x="835" y="800">Road Accidents</text></g>
+    <g><ellipse cx="835" cy="840" rx="69" ry="12"/><text x="835" y="840">Missing Persons</text></g>
+    <g><ellipse cx="833" cy="880" rx="74" ry="12"/><text x="833" y="880">Document Forgery</text></g>
+
+    <!-- Database labels -->
+    <g><ellipse cx="1075" cy="148" rx="45" ry="12"/><text x="1075" y="148">DB - Table 1</text></g>
+    <g><ellipse cx="1080" cy="183" rx="45" ry="12"/><text x="1080" y="183">DB - Table 2</text></g>
+    <g><ellipse cx="1075" cy="218" rx="45" ry="12"/><text x="1075" y="218">DB - Table 3</text></g>
+    <g><ellipse cx="1080" cy="253" rx="45" ry="12"/><text x="1080" y="253">DB - Table 4</text></g>
+    <g><ellipse cx="1075" cy="288" rx="45" ry="12"/><text x="1075" y="288">DB - Table 5</text></g>
+    <g><ellipse cx="1075" cy="323" rx="45" ry="12"/><text x="1075" y="323">DB - Table 6</text></g>
+    <g><ellipse cx="1075" cy="363" rx="45" ry="12"/><text x="1075" y="363">DB - Table 7</text></g>
+    <g><ellipse cx="1075" cy="403" rx="45" ry="12"/><text x="1075" y="403">DB - Table 8</text></g>
+    <g><ellipse cx="1075" cy="443" rx="45" ry="12"/><text x="1075" y="443">DB - Table 9</text></g>
+    <g><ellipse cx="1075" cy="488" rx="51" ry="12"/><text x="1075" y="488">DB - Table 10</text></g>
+
+    <g><ellipse cx="1075" cy="546" rx="45" ry="12"/><text x="1075" y="546">DB - Table 1</text></g>
+    <g><ellipse cx="1075" cy="581" rx="45" ry="12"/><text x="1075" y="581">DB - Table 2</text></g>
+    <g><ellipse cx="1075" cy="616" rx="45" ry="12"/><text x="1075" y="616">DB - Table 3</text></g>
+    <g><ellipse cx="1075" cy="651" rx="45" ry="12"/><text x="1075" y="651">DB - Table 4</text></g>
+    <g><ellipse cx="1075" cy="686" rx="45" ry="12"/><text x="1075" y="686">DB - Table 5</text></g>
+    <g><ellipse cx="1075" cy="723" rx="45" ry="12"/><text x="1075" y="723">DB - Table 6</text></g>
+    <g><ellipse cx="1075" cy="758" rx="45" ry="12"/><text x="1075" y="758">DB - Table 7</text></g>
+    <g><ellipse cx="1075" cy="803" rx="45" ry="12"/><text x="1075" y="803">DB - Table 8</text></g>
+    <g><ellipse cx="1075" cy="843" rx="45" ry="12"/><text x="1075" y="843">DB - Table 9</text></g>
+    <g><ellipse cx="1080" cy="883" rx="51" ry="12"/><text x="1080" y="883">DB - Table 10</text></g>
+
+    <!-- AI and report nodes -->
+    <g><ellipse cx="1360" cy="315" rx="87" ry="12"/><text x="1360" y="315">OPEN AI INTEGRATION</text></g>
+    <g><ellipse cx="1540" cy="315" rx="66" ry="12"/><text x="1540" y="315">Final Report Edit</text></g>
+    <g><ellipse cx="1358" cy="712" rx="86" ry="12"/><text x="1358" y="712">OPEN AI INTEGRATION</text></g>
+    <g><ellipse cx="1552" cy="712" rx="83" ry="12"/><text x="1552" y="712">Final Report Creation</text></g>
+  </g>
+</svg>
+</div>
+<div class="hint">Drag / swipe to pan · Mouse wheel or pinch to zoom</div>
+<script>
+(() => {
+  const viewport = document.getElementById('viewport');
+  const svg = document.getElementById('map');
+  let scale = 1, x = 0, y = 0;
+  let pointers = new Map();
+  let startX = 0, startY = 0, originX = 0, originY = 0;
+  let pinchStartDistance = 0, pinchStartScale = 1;
+
+  function applyTransform() {
+    svg.style.transformOrigin = '0 0';
+    svg.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+  }
+  function distance(a, b) {
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  }
+  viewport.addEventListener('pointerdown', e => {
+    viewport.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+    if (pointers.size === 1) {
+      viewport.classList.add('dragging');
+      startX = e.clientX; startY = e.clientY;
+      originX = x; originY = y;
+    } else if (pointers.size === 2) {
+      const pts = [...pointers.values()];
+      pinchStartDistance = distance(pts[0], pts[1]);
+      pinchStartScale = scale;
+    }
+  });
+  viewport.addEventListener('pointermove', e => {
+    if (!pointers.has(e.pointerId)) return;
+    pointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+    if (pointers.size === 1) {
+      x = originX + (e.clientX - startX);
+      y = originY + (e.clientY - startY);
+      applyTransform();
+    } else if (pointers.size === 2) {
+      const pts = [...pointers.values()];
+      const nextScale = pinchStartScale * distance(pts[0], pts[1]) / pinchStartDistance;
+      scale = Math.min(2.5, Math.max(.35, nextScale));
+      applyTransform();
+    }
+  });
+  function endPointer(e) {
+    pointers.delete(e.pointerId);
+    if (pointers.size === 0) viewport.classList.remove('dragging');
+    if (pointers.size === 1) {
+      const p = [...pointers.values()][0];
+      startX = p.x; startY = p.y; originX = x; originY = y;
+    }
+  }
+  viewport.addEventListener('pointerup', endPointer);
+  viewport.addEventListener('pointercancel', endPointer);
+  viewport.addEventListener('wheel', e => {
+    e.preventDefault();
+    const factor = e.deltaY < 0 ? 1.08 : .92;
+    const rect = viewport.getBoundingClientRect();
+    const px = e.clientX - rect.left, py = e.clientY - rect.top;
+    const next = Math.min(2.5, Math.max(.35, scale * factor));
+    x = px - (px - x) * (next / scale);
+    y = py - (py - y) * (next / scale);
+    scale = next;
+    applyTransform();
+  }, {passive:false});
+  applyTransform();
+})();
+</script>
+</body>
+</html>
